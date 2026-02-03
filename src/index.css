@@ -32,7 +32,23 @@ body {
   cursor: pointer;
 }
 
+/* Map container styles */
 .leaflet-container {
   margin-top: 60px; /* Push the map below the navbar */
-  width: 80%; /* Ensure the map spans the full width */
+  height: 70vh; /* Set the height of the map */
+  width: 100%; /* Full width */
+}
+
+/* Toggle button styles */
+.toggle-button {
+  position: absolute;
+  top: 100px; /* Place the button below the navbar (navbar height is 60px + 10px spacing) */
+  right: 10px; /* Keep it aligned to the right */
+  z-index: 1000; /* Ensure it stays above other elements */
+  padding: 10px 20px;
+  background-color: #546ccc;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px; /* Optional: Add rounded corners */
+  cursor: pointer;
 }

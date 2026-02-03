@@ -38,7 +38,7 @@ export const Map = () => {
       <MapContainer
         center={[51.505, -0.09]} // Default center (latitude, longitude)
         zoom={13} // Default zoom level
-        style={{ height: "100vh", width: "100%" }} // Full-screen map
+        style={{ height: "0vh", width: "100%" }} // Full-screen map
       >
         {/* TileLayer: The map tiles */}
         <TileLayer

@@ -37,8 +37,8 @@ export const Map = () => {
 
       {/* Map Container */}
       <MapContainer
-        center={[51.505, -0.09]} // Default center (latitude, longitude)
-        zoom={13} // Default zoom level
+        center={[47.6, -122.333]} // Default center (latitude, longitude)
+        zoom={11.5} // Default zoom level
         style={{ height: "70vh", width: "100%" }}
       >
         {isDarkMode ? (
@@ -53,7 +53,7 @@ export const Map = () => {
           />
         )}
 
-        <Marker position={[51.505, -0.09]}>
+        <Marker position={[47.606, -122.333]}>
           <Popup>
             A sample popup. <br /> You can customize this.
           </Popup>

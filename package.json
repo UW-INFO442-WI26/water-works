@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "firebase": "^12.8.0",
+    "csv-parse": "^6.1.0",
+    "firebase": "^12.9.0",
+    "firebase-admin": "^13.6.1",
     "leaflet": "^1.9.4",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

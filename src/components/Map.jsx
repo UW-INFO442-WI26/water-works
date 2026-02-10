@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router'
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"></link>
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/nav.css';
 
 export const Navbar = () => {
   return (
@@ -11,9 +12,37 @@ export const Navbar = () => {
         <a className="navbar-brand" href="#">
           Water Works
         </a>
+        <div className="d-flex gap-4 ms-auto">
+          <a className="nav-link text-white" href="#">
+            Home
+          </a>
+          <a className="nav-link text-white" href="#">
+            Quiz
+          </a>
+          <a className="nav-link text-white" href="#">
+            About
+          </a>
+        </div>
+
+        <span className="text-white mx-3">|</span>
+
+        <div className="d-flex gap-3">
+          <a className="btn btn-outline-light" href="#">
+            Sign-Up
+          </a>
+          <a className="btn btn-outline-light" href="#">
+            Log-In
+          </a>
+        </div>
       </div>
     </nav>
   );
+};
+
+export const Home = () => {
+  return (
+    <h1></h1>
+  )
 };
 
 export const Map = () => {

@@ -1,0 +1,11 @@
+.navbar .nav-link:hover {
+    text-decoration: underline;
+  }
+
+.navbar .nav-link {
+    font-size: 0.67rem; 
+  }
+
+  .navbar .btn {
+    font-size: 0.67rem; 
+  }

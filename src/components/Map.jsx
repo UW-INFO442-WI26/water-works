@@ -1,9 +1,38 @@
-import { useState } from 'react'
+//import { useState } from 'react'
+
+// map points (Jake)
+import { useState, useEffect } from 'react'
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router'
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"></link>
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/nav.css';
+
+// ADD FIREBASE IMPORTS (Jake)
+import { collection, getDocs } from "firebase/firestore";   //  Firestore functions
+import { db } from "../firebase";                            //  your firebase config file
+import L from "leaflet"; //  needed to create custom marker icons
+import "leaflet/dist/leaflet.css"; //  ensures markers render correctly
+
+//  Custom marker icons based on CSO risk
+const greenIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
+
+const redIcon = new L.Icon({
+  iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [41, 41]
+});
 
 export const Navbar = () => {
   return (
@@ -48,9 +77,48 @@ export const Home = () => {
 export const Map = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // map points (Jake)
+  const [locations, setLocations] = useState([]);
+
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  // Map points (Jake)
+  useEffect(() => {
+    const fetchLocations = async () => {
+      try {
+        //  "Map" must match your Firestore collection name EXACTLY
+        const snapshot = await getDocs(collection(db, "Map"));
+
+        const points = snapshot.docs.map(doc => {
+          const data = doc.data();
+
+          return {
+            id: doc.id,
+            name: data.Street_name,            // field from Firestore
+            rain: data.Rain,                   // field from Firestore
+            cso: data.Cso_possibility,         // field from Firestore
+
+            // CONVERT FIRESTORE GEPOINT → LEAFLET [lat, lng]
+            position: [
+              data.Location.latitude,
+              data.Location.longitude
+            ]
+          };
+        });
+
+        setLocations(points); // Save to state so React re-renders markers
+      } catch (error) {
+        console.error("Error loading locations:", error);
+      }
+    };
+
+    fetchLocations();
+  }, []); // empty dependency = run once on load
+
+  //end map points (Jake)
+
 
   return (
     <div className="container mt-5 pt-5">
@@ -87,6 +155,22 @@ export const Map = () => {
             A sample popup. <br /> You can customize this.
           </Popup>
         </Marker>
+
+        {locations.map(loc => (
+          <Marker
+            key={loc.id}
+            position={loc.position}
+            icon={loc.cso ? redIcon : greenIcon} // RED if CSO true, GREEN if false
+          >
+            <Popup>
+              <strong>{loc.name}</strong><br />
+              Rain: {loc.rain ? "Yes" : "No"}<br />
+              CSO Risk: {loc.cso ? "Possible" : "No"}
+            </Popup>
+          </Marker>
+        ))}
+
+
       </MapContainer>
     </div>
   );

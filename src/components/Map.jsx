@@ -180,3 +180,14 @@ export const Map = () => {
     </div>
   );
 };
+
+export const Footer = () => {
+
+  return (
+    <div className = "footer">
+      <h1>
+        Contact Us
+      </h1>
+    </div>
+  );
+};

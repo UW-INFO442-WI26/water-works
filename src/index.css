@@ -52,3 +52,12 @@ body {
   border-radius: 5px; /* Optional: Add rounded corners */
   cursor: pointer;
 }
+
+.footer {
+  height: 200px;  
+  padding: 10px;
+  margin-top: 100px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4);
+}

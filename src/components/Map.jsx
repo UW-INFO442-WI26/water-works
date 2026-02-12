@@ -7,7 +7,8 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router'
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"></link>
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/home.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import '../css/index.css';
 
 // ADD FIREBASE IMPORTS (Jake)
 import { collection, getDocs } from "firebase/firestore";   //  Firestore functions
@@ -46,7 +47,7 @@ export const Navbar = () => {
             Home
           </a>
           <a className="nav-link text-white" href="#">
-            Quiz
+            Your Impact
           </a>
           <a className="nav-link text-white" href="#">
             About
@@ -70,16 +71,21 @@ export const Navbar = () => {
 
 export const Home = () => {
   return (
-    <div style={{ marginTop: "80px", padding: "20px"}}>
-      <h1>Know before you go. Protect the waters you're surrounded by.</h1>
-      <h2>See and stay informed on local water safety conditions, learn the impact of wastewater treatment around your area.</h2>
-      <div className="d-flex gap-3 mt-4">
-        <a className="btn btn-outline-dark" href="#">
-          Learn More
-        </a>
-        <a className="btn btn-outline-dark" href="#">
-          Your Impact
-        </a>
+    <div className="home_opener">
+      <div className="home_text">
+        <h1>Know before you go. Protect the waters that surround you.</h1>
+        <h2>See and stay informed on local water safety conditions, learn the impact of wastewater treatment around your area.</h2>
+        <div className="buttons d-flex gap-3 mt-4">
+          <a className="btn btn-outline-primary" href="#">
+            Learn More <i className="bi bi-arrow-down"></i>
+          </a>
+          <a className="btn btn-outline-dark" href="#">
+            Your Impact
+          </a>
+        </div>
+      </div>
+      <div className="home_image">
+          <img src="../../water_works_cover.png" alt="cover image" />
       </div>
     </div>
   )

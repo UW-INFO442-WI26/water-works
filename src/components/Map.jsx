@@ -161,12 +161,6 @@ export const Map = () => {
           />
         )}
 
-        <Marker position={[47.606, -122.333]}>
-          <Popup>
-            A sample popup. <br /> You can customize this.
-          </Popup>
-        </Marker>
-
         {locations.map(loc => (
           <Marker
             key={loc.id}

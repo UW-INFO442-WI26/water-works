@@ -138,9 +138,10 @@ export const Map = () => {
 
 
   return (
-    <div className="container mt-5 pt-5">
+    <div className="map_container container mt-5 pt-5">
       {/* Theme Toggle Button */}
-      <div className="d-flex justify-content-end mb-3">
+      <div className="map_content">
+      <div className="button d-flex justify-content-end mb-3">
         <button
           onClick={toggleDarkMode}
           className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}
@@ -153,7 +154,6 @@ export const Map = () => {
       <MapContainer
         center={[47.6, -122.333]} // Default center (latitude, longitude)
         zoom={11.5} // Default zoom level
-        style={{ height: "70vh", width: "100%" }}
       >
         {isDarkMode ? (
           <TileLayer
@@ -183,6 +183,7 @@ export const Map = () => {
 
 
       </MapContainer>
+      </div>
     </div>
   );
 };

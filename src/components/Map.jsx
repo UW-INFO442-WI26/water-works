@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react'
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router'
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"></link>
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../css/index.css';
 
 // ADD FIREBASE IMPORTS (Jake)
@@ -138,22 +139,62 @@ export const Map = () => {
 
 
   return (
-    <div className="map_container container mt-5 pt-5">
+    <div className="map_feature container mt-5 pt-5">
       {/* Theme Toggle Button */}
-      <div className="map_content">
-      <div className="button d-flex justify-content-end mb-3">
-        <button
-          onClick={toggleDarkMode}
-          className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}
-        >
-          {isDarkMode ? "☀️" : "🌙"}
-        </button>
+
+      <div className="map_context">
+        <h1>
+          CSO Map
+        </h1>
+        <h2 className='heading_context'>
+          Check recent overflow activity to make safer choices for you and your family.
+        </h2>
+
+        <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingOne">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              1. What is an Overflow Event (CSO)?
+            </button>
+          </h2>
+          <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the first item's accordion body.</div>
+          </div>
+        </div>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingTwo">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              2. How can I best stay informed?
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+          </div>
+        </div>
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="flush-headingThree">
+            <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              3. What can I do to help?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+          </div>
+        </div>
       </div>
 
+      </div>
+
+      <div className="map_container>">
       {/* Map Container */}
       <MapContainer
         center={[47.6, -122.333]} // Default center (latitude, longitude)
-        zoom={11.5} // Default zoom level
+        zoom={11.5} // Default zoom level'
+        maxBounds={[
+          [47.4, -122.5], // Southwest corner of the bounding box
+          [47.8, -122.2], // Northeast corner of the bounding box
+        ]}
+        maxBoundsViscosity={1.0} // Prevents panning outside the bounds
       >
         {isDarkMode ? (
           <TileLayer
@@ -168,21 +209,30 @@ export const Map = () => {
         )}
 
         {locations.map(loc => (
-          <Marker
+          <CircleMarker
             key={loc.id}
-            position={loc.position}
-            icon={loc.cso ? redIcon : greenIcon} // RED if CSO true, GREEN if false
+            center={loc.position} // Use `center` instead of `position`
+            radius={5} // Adjust the size of the point
+            color={loc.cso ? "red" : "green"} // RED if CSO true, GREEN if false
+            fillOpacity={0.8} // Adjust the opacity of the point
           >
             <Popup>
               <strong>{loc.name}</strong><br />
               Rain: {loc.rain ? "Yes" : "No"}<br />
               CSO Risk: {loc.cso ? "Possible" : "No"}
             </Popup>
-          </Marker>
+          </CircleMarker>
         ))}
 
-
       </MapContainer>
+      </div>
+      <div className="button d-flex justify-content-end mb-3">
+        <button
+          onClick={toggleDarkMode}
+          className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}
+        >
+          {isDarkMode ? "☀️" : "🌙"}
+        </button>
       </div>
     </div>
   );

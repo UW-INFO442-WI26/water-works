@@ -5,6 +5,8 @@ html, body {
   padding: 0;
   display: flex; /* Enable Flexbox on the root elements */
   justify-content: center; /* Center horizontally */
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #cfdbff, #cfdbff, #afbfff); /* Gradient background */
 }
 
 * {
@@ -75,4 +77,42 @@ html, body {
   max-width: 70%; 
   height: auto;
   border-radius: 40px;
+}
+
+.map_feature {
+  min-height: calc(100vh - 100px); /* Adjust height to leave space for the footer */
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.map_context h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.map_context .heading_context {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400; 
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.accordion {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion-header {
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+.accordion-body {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 400; 
 }

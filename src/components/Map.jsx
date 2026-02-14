@@ -158,7 +158,7 @@ export const Map = () => {
             </button>
           </h2>
           <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the first item's accordion body.</div>
+            <div className="accordion-body">The Greater Seattle Area runs on a <b>combined sewer system (sewage and rain water flow together)</b>. Often during times of heavy rainfall (but can happen at other times), the system will get overwhelmed and the points on the map act as “relief points” (where untreated / partially treated water is overflowed).</div>
           </div>
         </div>
         <div className="accordion-item">
@@ -168,7 +168,7 @@ export const Map = () => {
             </button>
           </h2>
           <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+            <div className="accordion-body">CSO events overflow untreated water which can be harmful to your health if you come into contact. To stay informed, <b>click the “Get Notified” button under the CSO map and we’ll send you emails when overflow events are occurring</b>.</div>
           </div>
         </div>
         <div className="accordion-item">
@@ -178,7 +178,7 @@ export const Map = () => {
             </button>
           </h2>
           <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-            <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+            <div className="accordion-body">The sewage system is negatively impacted by fertilizer runoffs, unsolicited waste going through, and more. To learn more about what you can do to have a positive impact, <b>click on our “Your Impact” tab above</b>!</div>
           </div>
         </div>
       </div>

@@ -226,7 +226,13 @@ export const Map = () => {
 
       </MapContainer>
       </div>
-      <div className="button d-flex justify-content-end mb-3">
+      <div className="button-container d-flex justify-content-end mb-3">
+      <button
+        className="btn btn-primary"
+        onClick={() => alert("You will be notified of updates!")}
+      >
+        ✉️ Get Notified!
+      </button>
         <button
           onClick={toggleDarkMode}
           className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}

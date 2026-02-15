@@ -123,6 +123,7 @@ html, body {
   align-items: center; 
   margin-top: 20px;
   gap: 10px;
+  width: 100%;
 }
 
 .button-container button{
@@ -130,7 +131,9 @@ html, body {
   font-size: 1rem; /* Adjust font size */
 }
 
-.button-container .btn-primary {
-  padding: 10px 40px;
-  font-size: 1rem;
+.button-container .btn-outline-primary {
+  padding: 10px 40px; /* Increase vertical and horizontal padding */
+  font-size: 1rem; /* Adjust font size */
+  border-radius: 5px; /* Optional: Add rounded corners */
 }
+

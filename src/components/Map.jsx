@@ -228,7 +228,7 @@ export const Map = () => {
       </div>
       <div className="button-container d-flex justify-content-end mb-3">
       <button
-        className="btn btn-primary"
+        className="btn btn-outline-primary me-2"
         onClick={() => alert("You will be notified of updates!")}
       >
         ✉️ Get Notified!

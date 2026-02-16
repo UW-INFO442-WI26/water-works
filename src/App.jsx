@@ -2,7 +2,7 @@ import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { BrowserRouter, Routes, Route, Link } from "react-router";
-import { Map, Home, Footer } from './components/Map.jsx';
+import { Map, Home} from './components/Map.jsx';
 import About from "./components/About.jsx";
 import SignIn from "./components/Signin.jsx";
 import Quiz from "./components/Quiz.jsx";
@@ -70,6 +70,17 @@ function HomePage() {
     </>
   );
 }
+
+function Footer() {
+
+  return (
+    <div className = "footer">
+      <h1>
+        Contact Us
+      </h1>
+    </div>
+  );
+};
 
 export default function App() {
   return (

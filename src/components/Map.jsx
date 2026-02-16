@@ -4,7 +4,7 @@
 import { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Popup, CircleMarker } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css'; /* This doesn't work and crashes the webpage. Make sure to fix this*/
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../css/index.css';
 
@@ -202,17 +202,6 @@ export const Map = ({ compact = false }) => {
           {isDarkMode ? "☀️" : "🌙"}
         </button>
       </div>
-    </div>
-  );
-};
-
-export const Footer = () => {
-
-  return (
-    <div className = "footer">
-      <h1>
-        Contact Us
-      </h1>
     </div>
   );
 };

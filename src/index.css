@@ -65,5 +65,6 @@ html {
   margin-top: 100px;
   color: white;
   width: 100%;
-  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4);
+  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Same backgroud color as navbar */
+  text-align: center;
 }

@@ -2,10 +2,7 @@
 
 // map points (Jake)
 import { useState, useEffect } from 'react'
-
-import { BrowserRouter, Routes, Route, Link } from 'react-router'
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"></link>
-import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from "react-leaflet";
+import { MapContainer, TileLayer, Popup, CircleMarker } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -36,40 +33,6 @@ const redIcon = new L.Icon({
   shadowSize: [41, 41]
 });
 
-export const Navbar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Water Works
-        </a>
-        <div className="d-flex gap-4 ms-auto">
-          <a className="nav-link text-white" href="#">
-            Home
-          </a>
-          <a className="nav-link text-white" href="#">
-            Your Impact
-          </a>
-          <a className="nav-link text-white" href="#">
-            About
-          </a>
-        </div>
-
-        <span className="text-white mx-3">|</span>
-
-        <div className="d-flex gap-3">
-          <a className="btn btn-outline-light" href="#">
-            Sign-Up
-          </a>
-          <a className="btn btn-outline-light" href="#">
-            Log-In
-          </a>
-        </div>
-      </div>
-    </nav>
-  );
-};
-
 export const Home = () => {
   return (
     <div className="home_opener">
@@ -92,9 +55,8 @@ export const Home = () => {
   )
 };
 
-export const Map = () => {
+export const Map = ({ compact = false }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
   // map points (Jake)
   const [locations, setLocations] = useState([]);
 
@@ -139,9 +101,8 @@ export const Map = () => {
 
 
   return (
-    <div className="map_feature container mt-5 pt-5">
+    <div className={ compact ? "map_feature" : "map_feature container mt-5 pt-5"}>
       {/* Theme Toggle Button */}
-
       <div className="map_context">
         <h1>
           CSO Map
@@ -149,7 +110,8 @@ export const Map = () => {
         <h2 className='heading_context'>
           Check recent overflow activity to make safer choices for you and your family.
         </h2>
-
+      </div>
+      {!compact && (
         <div className="accordion accordion-flush" id="accordionFlushExample">
         <div className="accordion-item">
           <h2 className="accordion-header" id="flush-headingOne">
@@ -182,8 +144,8 @@ export const Map = () => {
           </div>
         </div>
       </div>
-
-      </div>
+      )}
+      
 
       <div className="map_container>">
       {/* Map Container */}

@@ -6,6 +6,9 @@ body {
   background-color: #eeeeee;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 .navbar {
   background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Gradient background */
   color: #ffffff; /* White text */
@@ -21,6 +24,9 @@ body {
   height: 60px; /* Set a fixed height for the navbar */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
+
+.navbar .nav-link { font-size: 1rem; }
+.navbar .btn { font-size: 0.95rem; }
 
 .menu {
   margin-right: 8%; /* Adds space between the menu and the right edge */

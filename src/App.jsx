@@ -41,7 +41,7 @@ function Navbar() {
                <NavLink to='/map' className='nav-link'>Map</NavLink>
             </li>
             <li className='nav-items'>
-              <NavLink to='/module' className='nav-link'>Module</NavLink>
+              <NavLink to='/module' className='nav-link'>Your Impact</NavLink>
             </li>
             <li className='nav-items ms-lg-2'>
               <NavLink to='/signin' className='btn btn-primary px-3'>

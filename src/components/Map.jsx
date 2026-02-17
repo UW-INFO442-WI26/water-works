@@ -43,7 +43,7 @@ export const Home = () => {
           <a className="btn btn-outline-primary" href="#">
             Learn More <i className="bi bi-arrow-down"></i>
           </a>
-          <a className="btn btn-outline-dark" href="#">
+          <a className="btn btn-outline-dark" href="/module">
             Your Impact
           </a>
         </div>

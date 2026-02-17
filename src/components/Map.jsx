@@ -40,9 +40,12 @@ export const Home = () => {
         <h1>Know before you go. Protect the waters that surround you.</h1>
         <h2>See and stay informed on local water safety conditions, learn the impact of wastewater treatment around your area.</h2>
         <div className="buttons d-flex gap-3 mt-4">
-          <a className="btn btn-outline-primary" href="#">
-            Learn More <i className="bi bi-arrow-down"></i>
-          </a>
+        <a
+          className="btn btn-outline-primary"
+          onClick={() => document.getElementById("explore").scrollIntoView({ behavior: "smooth" })}
+        >
+          Learn More <i className="bi bi-arrow-down"></i>
+        </a>
           <a className="btn btn-outline-dark" href="/module">
             Your Impact
           </a>

@@ -62,7 +62,7 @@ function HomePage() {
       <section id="home">
         <Home />
       </section>
-      <section className="home-cards">
+      <section id="explore" className="home-cards">
         <h1><b>Explore</b></h1>
         <h2 className="subtitle">Click to Learn More About Each Feature</h2>
         <div className="home-cards-container">

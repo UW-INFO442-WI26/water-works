@@ -35,7 +35,7 @@ function Navbar() {
               <NavLink to='/' className='nav-link'>Home</NavLink>
             </li>
             <li className='nav-items'>
-              <a className='nav-link' href='#about'> About Us </a>
+              <NavLink to='/about' className='nav-link'>About</NavLink>
             </li>
             <li className='nav-items'>
                <NavLink to='/map' className='nav-link'>Map</NavLink>
@@ -64,9 +64,6 @@ function HomePage() {
       <section id='map-preview' className='container py-5'>
         <Map compact={true}/>
       </section>
-      <section id='about' className='container py-5'>
-        <About />
-      </section>
     </>
   );
 }
@@ -90,6 +87,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/map" element={<Map compact={false}/>} />
           <Route path="/module" element={<Module />} />
+          <Route path='/about' element={<About/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/quiz" element={<Quiz />} />
       </Routes>

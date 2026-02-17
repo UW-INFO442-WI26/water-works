@@ -136,3 +136,63 @@ html, body {
   font-size: 1rem; /* Adjust font size */
   border-radius: 5px; /* Optional: Add rounded corners */
 }
+
+.home-cards{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.home-cards h1{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.home-cards .subtitle {
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.home-cards-container{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card-content {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: #cfdbff solid 1px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.25);
+  cursor: pointer;
+}
+
+.card-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1.2rem;
+}
+
+/* responsive */
+@media (max-width: 1024px){
+  .home-cards-container{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px){
+  .home-cards-container{ grid-template-columns: 1fr; }
+}

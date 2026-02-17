@@ -1,4 +1,5 @@
-import './App.css'
+import './App.css';
+import './css/index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { BrowserRouter, Routes, Route, Link } from "react-router";
@@ -61,8 +62,28 @@ function HomePage() {
       <section id="home">
         <Home />
       </section>
-      <section id='map-preview' className='container py-5'>
-        <Map compact={true}/>
+      <section className="home-cards">
+        <h1><b>Explore</b></h1>
+        <h2 className="subtitle">Click to Learn More About Each Feature</h2>
+        <div className="home-cards-container">
+          <NavLink to="/about" className="card-content">
+            <img src="https://img.icons8.com/?size=100&id=dGz3uury9jro&format=png&color=000000" alt="info icon" />
+            <h2>About Us</h2>
+            <p>Learn more about the Water Works team and our mission!</p>
+          </NavLink>
+
+          <NavLink to="/map" className="card-content">
+            <img src="https://img.icons8.com/?size=100&id=Kh9y4bxkctIl&format=png&color=000000" alt="map icon" />
+            <h2>CSO Map</h2>
+            <p>Explore the King County CSO Map, learn more about the local wastewater system, and get notified!</p>
+          </NavLink>
+
+          <NavLink to="/module" className="card-content">
+            <img src="https://img.icons8.com/?size=100&id=104292&format=png&color=000000" alt="ok hand icon" />
+            <h2>Your Impact</h2>
+            <p>Learn how you can make a positive impact on our local waters through every day habits!</p>
+          </NavLink>
+        </div>
       </section>
     </>
   );

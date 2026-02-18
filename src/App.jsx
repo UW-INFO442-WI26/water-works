@@ -84,6 +84,13 @@ function HomePage() {
             <p>Learn how you can make a positive impact on our local waters through every day habits!</p>
           </NavLink>
         </div>
+        <a href="https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/education/learn-about-water" className="home-card-resources card-content">
+          <img src="https://bondlink-cdn.com/2282/logo.ySo0pqrL.qrAnpn1k.png" alt="king county icon" />
+          <div className='home-card-resources-info'>
+              <h2>Additional Resources</h2>
+              <p>Learn more about King County's waters, treatment plant functions, and more through the King County website!</p>
+            </div>
+        </a>
       </section>
     </>
   );

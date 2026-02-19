@@ -9,6 +9,77 @@ html, body {
   background: linear-gradient(90deg, #cfdbff, #cfdbff, #afbfff); /* Gradient background */
 }
 
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+body {
+  font-family: 'Lora', serif;
+  font-weight: 100;
+  background-color: #eeeeee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Gradient background */
+  color: #ffffff; /* White text */
+  padding: 10px 20px; /* Adjust padding to reduce height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Full width */
+  position: fixed; /* Makes the navbar stationary at the top */
+  top: 0; /* Aligns it to the top of the screen */
+  left: 0; /* Ensures it starts from the left edge */
+  z-index: 1000; /* Keeps it above other elements */
+  height: 60px; /* Set a fixed height for the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.navbar .nav-link { font-size: 1rem; }
+.navbar .btn { font-size: 0.95rem; }
+
+.menu {
+  margin-right: 8%; /* Adds space between the menu and the right edge */
+}
+
+.menu img {
+  height: 30px; 
+  width: auto; 
+  cursor: pointer;
+}
+
+/* Map container styles */
+.leaflet-container {
+  margin-top: 60px; /* Push the map below the navbar */
+  height: 70vh; /* Set the height of the map */
+  width: 100%; /* Full width */
+}
+
+/* Toggle button styles */
+.toggle-button {
+  position: absolute;
+  top: 100px; /* Place the button below the navbar (navbar height is 60px + 10px spacing) */
+  right: 10px; /* Keep it aligned to the right */
+  z-index: 1000; /* Ensure it stays above other elements */
+  padding: 10px 20px;
+  background-color: #546ccc;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px; /* Optional: Add rounded corners */
+  cursor: pointer;
+}
+
+.footer {
+  height: 200px;  
+  padding: 10px;
+  margin-top: 100px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Same backgroud color as navbar */
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,11 +98,18 @@ html, body {
   font-size: 0.67rem; 
 }
 
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+  text-align: center;
+  margin-right: 10px;
+}
+
 /* Home Page CSS */
 
 .home_opener {
   margin: 0;
-  margin-top: 3%;
+  margin-top: 0%;
   background: linear-gradient(90deg, #afbfff, #cfdbff, #cfdbff); /* Gradient background */
   display: flex;
   padding: 20px;

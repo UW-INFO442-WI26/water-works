@@ -15,7 +15,7 @@ function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
       <div className="container">
         <NavLink to="/" className="navbar-brand fw-semibold">
-          <img src="../water-works-logo.png" alt="" />Water Works
+          <img src="../img/water-works-logo.png" alt="water works logo" />Water Works
         </NavLink>
 
         <button

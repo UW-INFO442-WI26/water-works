@@ -1,0 +1,44 @@
+[
+    {
+      "title": "Flushing Toilet Paper",
+      "image": "/img/toilet-paper.png",
+      "consequence": "Toilet paper should be the only item being flushed down the toilet that’s not human waste. Compared to other products, toilet paper is designed to break apart quickly in water.",
+      "alternative": "No better alternative!"
+    },
+    {
+      "title": "Flushing Paper Towels / Cleaning Wipes",
+      "image": "/img/paper-towel.png",
+      "consequence": "Flushing anything other than toilet paper (even if it’s labeled as flushable) can cause build up in your local sewer system, causing overflows, leakages, and further damages.",
+      "alternative": "Dispose of these items in the trash."
+    },
+    {
+      "title": "Pouring Grease / Oil down the Drain",
+      "image": "/img/grease-oil.png",
+      "consequence": "Grease and oil will stick to the sewer pipes causing unpleasant and expensive build up and it’ll quickly solidify. This will cause property damages as well as higher operational costs for the treatment system. In turn, sewer bills will increase.",
+      "alternative": "Recycle grease and oil. Let the product cool, place it in an empty jar or can, then dispose of it in the trash. If it’s only a small amount, wipe it with a paper towel then dispose of it in the trash."
+    },
+    {
+      "title": "Using Natural Products on Your Lawn",
+      "image": "/img/natural-products.png",
+      "consequence": "Natural products release nutrients slower than synthetic fertilizers and pesticides. These products are much easier to treat if it gets washed out by heavy rain.",
+      "alternative": "Keep using natural products, but try to avoid applying before heavy rain activities."
+    },
+    {
+      "title": "Using Fertilizer and Pesticides",
+      "image": "/img/fertilizer-pesticides.png",
+      "consequence": "This leads to concentrated chemicals washed into storm drains during rainfall which increases strain in our treatment system and can harm aquatic life and water quality.",
+      "alternative": "Use natural alternatives. If not possible, avoid applying these products before heavy rain at all costs!"
+    },
+    {
+      "title": "Leaving Pet Waste Out",
+      "image": "/img/pet-waste.png",
+      "consequence": "If you are under a combined system, then pet waste will lead to higher operational costs to treat. If you are under a separated sewer system (sewage and storm water are separate), then the pet waste will likely be combined with rain water and disposed into local bodies of water w/o treatment.",
+      "alternative": "Pick up after your pets!"
+    },
+    {
+      "title": "Letting Car Parts and Oils Flow Down the Drain",
+      "image": "/img/car-oils.png",
+      "consequence": "Leads to water pollution because these products are caught down the storm drain.",
+      "alternative": "Recycle any car fluids, don’t dump anything down the storm drain."
+    }
+  ]

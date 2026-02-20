@@ -293,6 +293,69 @@ a {
   color: inherit;
 }
 
+/*Your Impact Section*/
+
+.impact-layout {
+  display: flex;
+  flex-direction: row; /* Arrange the cards and details side by side */
+  width: 100%; /* Full width of the screen */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.impact-titles {
+  flex: 1; /* Take up 50% of the width */
+  max-width: 50%; /* Ensure it doesn't exceed half the screen */  overflow-y: auto; /* Allow scrolling if the content overflows */
+  padding: 20px; /* Add padding for spacing */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1); /* Optional: Add a subtle divider */
+}
+
+.impact-title-card {
+  text-align: center;
+  margin: 10px 0; 
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: #333 solid 1px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.impact-title-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.25);
+  cursor: pointer;
+}
+
+.impact-title-card.active {
+  background-color: rgba(0, 120, 255, 0.25);
+  color: white;
+}
+
+.impact-details {
+  flex: 1; 
+  max-width: 50%; 
+  padding: 20px; /* Add padding for spacing */
+}
+
+.impact-details img {
+  width: auto;
+  height: 450px;
+  display: block;
+  margin: 0 auto 20px; /* Center the image and add bottom margin */
+}
+
+.impact-details p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.your-impact-container h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
 /* responsive */
 @media (max-width: 1024px){
   .home-cards-container{ grid-template-columns: repeat(2, minmax(0, 1fr)); }

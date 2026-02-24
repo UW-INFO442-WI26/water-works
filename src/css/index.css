@@ -98,18 +98,17 @@ html {
   font-size: 0.67rem; 
 }
 
-<<<<<<< HEAD
 /* Footer CSS */
 
 .footer .footer-link:hover {
   text-decoration: underline;
-=======
+}
+
 .navbar-brand img {
   height: 45px;
   width: auto;
   text-align: center;
   margin-right: 10px;
->>>>>>> ba6ef6d297002e8af5d3617dd9154cfd17e61b3f
 }
 
 /* Home Page CSS */

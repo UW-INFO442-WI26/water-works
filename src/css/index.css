@@ -9,6 +9,77 @@ html, body {
   background: linear-gradient(90deg, #cfdbff, #cfdbff, #afbfff); /* Gradient background */
 }
 
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+body {
+  font-family: 'Lora', serif;
+  font-weight: 100;
+  background-color: #eeeeee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Gradient background */
+  color: #ffffff; /* White text */
+  padding: 10px 20px; /* Adjust padding to reduce height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Full width */
+  position: fixed; /* Makes the navbar stationary at the top */
+  top: 0; /* Aligns it to the top of the screen */
+  left: 0; /* Ensures it starts from the left edge */
+  z-index: 1000; /* Keeps it above other elements */
+  height: 60px; /* Set a fixed height for the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.navbar .nav-link { font-size: 1rem; }
+.navbar .btn { font-size: 0.95rem; }
+
+.menu {
+  margin-right: 8%; /* Adds space between the menu and the right edge */
+}
+
+.menu img {
+  height: 30px; 
+  width: auto; 
+  cursor: pointer;
+}
+
+/* Map container styles */
+.leaflet-container {
+  margin-top: 60px; /* Push the map below the navbar */
+  height: 70vh; /* Set the height of the map */
+  width: 100%; /* Full width */
+}
+
+/* Toggle button styles */
+.toggle-button {
+  position: absolute;
+  top: 100px; /* Place the button below the navbar (navbar height is 60px + 10px spacing) */
+  right: 10px; /* Keep it aligned to the right */
+  z-index: 1000; /* Ensure it stays above other elements */
+  padding: 10px 20px;
+  background-color: #546ccc;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px; /* Optional: Add rounded corners */
+  cursor: pointer;
+}
+
+.footer {
+  height: 200px;  
+  padding: 10px;
+  margin-top: 100px;
+  color: white;
+  width: 100%;
+  background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Same backgroud color as navbar */
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -27,17 +98,25 @@ html, body {
   font-size: 0.67rem; 
 }
 
+<<<<<<< HEAD
 /* Footer CSS */
 
 .footer .footer-link:hover {
   text-decoration: underline;
+=======
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+  text-align: center;
+  margin-right: 10px;
+>>>>>>> ba6ef6d297002e8af5d3617dd9154cfd17e61b3f
 }
 
 /* Home Page CSS */
 
 .home_opener {
   margin: 0;
-  margin-top: 3%;
+  margin-top: 0%;
   background: linear-gradient(90deg, #afbfff, #cfdbff, #cfdbff); /* Gradient background */
   display: flex;
   padding: 20px;
@@ -195,6 +274,95 @@ html, body {
   font-size: 1.2rem;
 }
 
+.home-card-resources {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.home-card-resources img {
+  width: auto;
+  height: 120px;
+  margin-right: 40px;
+}
+
+.home-card-resources-info {
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Your Impact Section*/
+
+.impact-layout {
+  display: flex;
+  flex-direction: row; /* Arrange the cards and details side by side */
+  width: 100%; /* Full width of the screen */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.impact-titles {
+  flex: 1; /* Take up 50% of the width */
+  max-width: 50%; /* Ensure it doesn't exceed half the screen */  overflow-y: auto; /* Allow scrolling if the content overflows */
+  padding: 20px; /* Add padding for spacing */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1); /* Optional: Add a subtle divider */
+}
+
+.impact-title-card {
+  text-align: center;
+  margin: 10px 0; 
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: #333 solid 1px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.impact-title-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.25);
+  cursor: pointer;
+}
+
+.impact-title-card.active {
+  background-color: rgba(0, 120, 255, 0.25);
+  color: white;
+}
+
+.impact-details {
+  flex: 1; 
+  max-width: 50%; 
+  padding: 20px; /* Add padding for spacing */
+}
+
+.impact-details img {
+  width: auto;
+  height: 450px;
+  display: block;
+  margin: 0 auto 20px; /* Center the image and add bottom margin */
+}
+
+.impact-details p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.your-impact-container h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
 /* responsive */
 @media (max-width: 1024px){
   .home-cards-container{ grid-template-columns: repeat(2, minmax(0, 1fr)); }

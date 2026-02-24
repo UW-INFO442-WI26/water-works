@@ -99,14 +99,14 @@ function HomePage() {
 function Footer() {
 
 return (
-<footer className="footer">
+<footer className="footer bg-dark shadow-sm sticky-top">
   <div className="container">
     <h1>
       Site Links
     </h1>
 
-    <div>
-      <ul className='navbar-nav ms-auto gap-lg-2'>
+    <div className='' id='mainNav'>
+      <ul className='navbar-nav footer-foot ms-auto gap-lg-2'>
         <li className='nav-items'>
           <NavLink to='/about' className='nav-link'>About Us</NavLink>
         </li>

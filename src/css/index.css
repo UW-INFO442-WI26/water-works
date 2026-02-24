@@ -77,7 +77,15 @@ html {
   color: white;
   width: 100%;
   background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Same backgroud color as navbar */
-  text-align: center;
+  text-align: left;
+}
+
+.footer .foot-link { 
+  font-size: 1rem; 
+}
+
+.footer .btn { 
+  font-size: 0.95rem; 
 }
 
 * {
@@ -100,8 +108,16 @@ html {
 
 /* Footer CSS */
 
-.footer .footer-link:hover {
+.footer .foot-link:hover {
   text-decoration: underline;
+}
+
+.footer .foot-link {
+    font-size: 0.67rem; 
+  }
+
+.footer .btn {
+  font-size: 0.67rem; 
 }
 
 .navbar-brand img {

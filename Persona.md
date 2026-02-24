@@ -1,11 +1,11 @@
 For our project, we have created 2 different personas
 
 # Persona 1
-## Noah Age: 21
-He's a University student. During his time, he enjoys kayaking, and fishing to take the stress of his mind
+## Michael Age: 21
+He's a University of Washington student. During his free time, he enjoys kayaking, and fishing to take the stress of his mind.
 
 ### Goals: 
-Check if it’s safe to swim or paddle quickly
+Check if it’s safe to swim, paddle, or fishing is safe in the current water area.
 
 Avoid getting sick
 

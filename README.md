@@ -16,10 +16,14 @@ King County’s wastewater system is a key contributor to our environmental cond
 
 ## Key features
 
+
 ## Architecture Overview
 
+
 ## Functional Priorities
+P0:
 
 ## Testing Strategy
+
 
 ## External Reference

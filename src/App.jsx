@@ -91,14 +91,31 @@ function HomePage() {
 
 function Footer() {
 
-  return (
-    <div className = "footer">
-      <h1>
-        Contact Us
-      </h1>
+return (
+<footer className="footer">
+  <div className="container">
+    <h1>
+      Site Links
+    </h1>
+
+    <div>
+      <ul className='navbar-nav ms-auto gap-lg-2'>
+        <li className='nav-items'>
+          <NavLink to='/about' className='nav-link'>About Us</NavLink>
+        </li>
+        <li className='nav-items'>
+          <NavLink to='/map' className='nav-link'>Map</NavLink>
+        </li>
+        <li className='nav-items'>
+          <NavLink to='/module' className='nav-link'>Your Impact</NavLink>
+        </li>
+      </ul>
     </div>
+  </div>
+</footer>
   );
 };
+
 
 export default function App() {
   return (

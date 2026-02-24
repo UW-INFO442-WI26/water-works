@@ -27,6 +27,12 @@ html, body {
   font-size: 0.67rem; 
 }
 
+/* Footer CSS */
+
+.footer .footer-link:hover {
+  text-decoration: underline;
+}
+
 /* Home Page CSS */
 
 .home_opener {

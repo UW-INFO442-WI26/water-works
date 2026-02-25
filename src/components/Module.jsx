@@ -6,7 +6,11 @@ export default function Module() {
 
   return (
     <div className="your-impact-container">
-      <h1>Your Impact</h1>
+      <div className ="your-impact-header">
+        <img src="https://img.icons8.com/?size=100&id=6z16AKadw36a&format=png&color=000000" alt="" />
+        <h1 className="primary-header">Your Impact.</h1>
+        <h1><b>How you can work for water.</b></h1>
+      </div>
       <div className="impact-layout">
         <div className="impact-titles">
           {data.map((item, index) => (
@@ -24,13 +28,13 @@ export default function Module() {
         <div className="impact-details">
           {selectedItem !== null ? (
             <>
-              <p><strong>Consequence:</strong> {data[selectedItem].consequence}</p>
+              <p className="consequence-bubble"><strong>Consequence:</strong> {data[selectedItem].consequence}</p>
               <img
                 src={data[selectedItem].image}
                 alt={data[selectedItem].title}
                 className="impact-image"
               />
-              <p>
+              <p className="consequence-bubble">
                 <strong>Alternative:</strong> {data[selectedItem].alternative}
               </p>
             </>

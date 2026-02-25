@@ -79,7 +79,7 @@ function HomePage() {
           </NavLink>
 
           <NavLink to="/module" className="card-content">
-            <img src="https://img.icons8.com/?size=100&id=104292&format=png&color=000000" alt="ok hand icon" />
+          <img src="https://img.icons8.com/?size=100&id=6z16AKadw36a&format=png&color=000000" alt="globe hands" />
             <h2>Your Impact</h2>
             <p>Learn how you can make a positive impact on our local waters through every day habits!</p>
           </NavLink>

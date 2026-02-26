@@ -67,8 +67,7 @@ function HomePage() {
         <h2 className="subtitle">Click to Learn More About Each Feature</h2>
         <div className="home-cards-container">
           <NavLink to="/about" className="card-content">
-            <img src="https:/
-            /img.icons8.com/?size=100&id=dGz3uury9jro&format=png&color=000000" alt="info icon" />
+            <img src="https://img.icons8.com/?size=100&id=dGz3uury9jro&format=png&color=000000" alt="info icon" />
             <h2>About Us</h2>
             <p>Learn more about the Water Works team and our mission!</p>
           </NavLink>

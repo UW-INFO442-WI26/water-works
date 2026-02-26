@@ -157,7 +157,7 @@ export const Map = ({ compact = false }) => {
       {/* Theme Toggle Button */}
       <div className="your-impact-header your-impact-container">
         <img src="https://img.icons8.com/?size=100&id=Kh9y4bxkctIl&format=png&color=000000" alt="map icon" />
-        <h1 className="primary-header"> CSO Map.</h1>
+        <h1 className="primary-header"> Water Safety Map.</h1>
         <h1><b>How water works for you.</b></h1>
       </div>
       {!compact && (

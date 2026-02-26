@@ -74,8 +74,8 @@ function HomePage() {
 
           <NavLink to="/map" className="card-content">
             <img src="https://img.icons8.com/?size=100&id=Kh9y4bxkctIl&format=png&color=000000" alt="map icon" />
-            <h2>CSO Map</h2>
-            <p>Explore the King County CSO Map, learn more about the local wastewater system, and get notified!</p>
+            <h2>Water Safety Map</h2>
+            <p>Is it safe today? Check if it's safe for recreational use.</p>
           </NavLink>
 
           <NavLink to="/module" className="card-content">

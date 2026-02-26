@@ -1,20 +1,15 @@
 //import { useState } from 'react'
-
-// map points (Jake)
 import { useState, useEffect } from 'react'
 import { MapContainer, TileLayer, Popup, CircleMarker } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap-icons/font/bootstrap-icons.css'; /* This doesn't work and crashes the webpage. Make sure to fix this*/
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '../css/index.css';
+import { collection, getDocs } from "firebase/firestore";   
+import { db } from "../firebase";                            
+import L from "leaflet"; 
+import "leaflet/dist/leaflet.css"; 
+import emailjs from "@emailjs/browser";
 
-// ADD FIREBASE IMPORTS (Jake)
-import { collection, getDocs } from "firebase/firestore";   //  Firestore functions
-import { db } from "../firebase";                            //  your firebase config file
-import L from "leaflet"; //  needed to create custom marker icons
-import "leaflet/dist/leaflet.css"; //  ensures markers render correctly
-
-//  Custom marker icons based on CSO risk
 const greenIcon = new L.Icon({
   iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
   shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
@@ -60,8 +55,11 @@ export const Home = () => {
 
 export const Map = ({ compact = false }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  // map points (Jake)
   const [locations, setLocations] = useState([]);
+
+  const [notifyEmail, setNotifyEmail] = useState("");
+  const [notifyStatus, setNotifyStatus] = useState({ type: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -100,7 +98,58 @@ export const Map = ({ compact = false }) => {
     fetchLocations();
   }, []); // empty dependency = run once on load
 
-  //end map points (Jake)
+  const handleNotifySubmit = async (event) => {
+    event.preventDefault();
+
+    const email = notifyEmail.trim().toLowerCase();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(!emailPattern.test(email)) {
+      setNotifyStatus({
+        type:"error",
+        message:"Please enter a valid email address",
+      });
+      return; 
+    }
+
+    const redStreeNames = locations
+      .filter((loc) => loc.cso)
+      .map((loc) => loc.name);
+
+    const streetNameList = redStreeNames.length
+      ? redStreeNames.map((name, i) => `${i + 1}. ${name}`).join("\n")
+      : "No CSO risk";
+
+    try {
+      setIsSubmitting(true);
+      setNotifyStatus({ type: "", message: ""});
+
+      await emailjs.send(
+        "service_qlgbbgv",
+        "template_ymkfkut",
+        {
+          to_email: email,
+          street_name_list: streetNameList,
+        },
+        { publicKey: "0h71I3QcFavyxYzsE"}
+      );
+      
+      setNotifyStatus({
+        type: "success",
+        message: "Subscribed for CSO Updates"
+      });
+      setNotifyEmail("");
+
+    } catch (error) {
+      console.error("Error of", error);
+      setNotifyStatus({
+        type: "error",
+        message: "Couldn't subscribe, try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
 
   return (
@@ -188,19 +237,50 @@ export const Map = ({ compact = false }) => {
 
       </MapContainer>
       </div>
+
       <div className="button-container d-flex justify-content-end mb-3">
-      <button
-        className="btn btn-outline-primary me-2"
-        onClick={() => alert("You will be notified of updates!")}
-      >
-        ✉️ Get Notified!
-      </button>
+
+        <form
+        className='d-flex gap-2 align-items-center me-2'
+        onSubmit={handleNotifySubmit}
+        >
+          <input
+          type="email"
+          className='form-control'
+          placeholder='Enter your email'
+          aria-label='Email for CSO updates'
+          value={notifyEmail}
+          onChange={(e) => setNotifyEmail(e.target.value)}
+          disabled={isSubmitting}
+          required
+          style={{ minWidth: "240px" }}
+          />
+
+          <button
+            type='submit'
+            className='btn btn-outline-primary'
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "✉️ Get Notified!"}
+          </button>
+        </form>
+      
         <button
           onClick={toggleDarkMode}
           className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}
         >
           {isDarkMode ? "☀️" : "🌙"}
         </button>
+
+        {notifyStatus.message && (
+          <p
+            className={`mb-3 ${
+              notifyStatus.type == "error" ? "text-danger" : "text-success"
+            }`}
+          >
+            {notifyStatus.message}
+          </p>
+        )}
       </div>
     </div>
   );

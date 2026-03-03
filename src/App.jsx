@@ -13,7 +13,7 @@ import { NavLink } from 'react-router';
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
-      <div className="container">
+      <div className="container-fluid">
         <NavLink to="/" className="navbar-brand fw-semibold">
           <img src="../img/water-works-logo.png" alt="water works logo" />Water Works
         </NavLink>
@@ -100,12 +100,12 @@ function Footer() {
 
 return (
 <footer className="footer bg-dark shadow-sm sticky-top">
-  <div className="container">
+  <div className="container-fluid">
     <h1>
       Site Links
     </h1>
 
-    <div className='' id='mainNav'>
+    <div>
       <ul className='navbar-nav footer-foot ms-auto gap-lg-2'>
         <li className='nav-items'>
           <NavLink to='/about' className='nav-link'>About Us</NavLink>

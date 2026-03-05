@@ -207,7 +207,7 @@ export const Map = ({ compact = false }) => {
       <div className="map_container>">
         <MapContainer
           center={userLocation || [47.6, -122.333]}
-          zoom={userLocation ? 10 : 11.5}
+          zoom={userLocation ? 8 : 11.5}
           maxBounds={[
             [47.4, -122.5],
             [47.8, -122.2],

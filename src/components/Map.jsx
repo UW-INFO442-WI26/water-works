@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { MapContainer, TileLayer, Popup, CircleMarker, useMap } from "react-leaflet";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import '../css/index.css';
+import '../index.css';
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { db, auth } from "../firebase";
 import L from "leaflet";
@@ -265,8 +265,8 @@ export const Map = ({ compact = false }) => {
         </MapContainer>
       </div>
 
-      <div className="button-container d-flex justify-content-end mb-3">
-        <form className='d-flex gap-2 align-items-center me-2' onSubmit={handleNotifySubmit}>
+      <div className="button-container mb-3">
+        <form className='notify-form d-flex gap-2 align-items-center' onSubmit={handleNotifySubmit}>
           <input
             type="email"
             className='form-control'

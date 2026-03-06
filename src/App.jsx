@@ -1,8 +1,10 @@
-import './App.css';
-import './css/index.css';
+import './index.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { BrowserRouter, Routes, Route, Link } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { useEffect, useState } from 'react';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from "./firebase";
 import { Map, Home} from './components/Map.jsx';
 import About from "./components/About.jsx";
 import SignIn from "./components/Signin.jsx";
@@ -11,6 +13,23 @@ import Module from "./components/Module.jsx";
 import { NavLink } from 'react-router';
 
 function Navbar() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); 
+    } catch (error) {
+      console.error("cannot logout: ", error);
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
       <div className="container-fluid">
@@ -45,9 +64,15 @@ function Navbar() {
               <NavLink to='/module' className='nav-link'>Your Impact</NavLink>
             </li>
             <li className='nav-items ms-lg-2'>
-              <NavLink to='/signin' className='btn btn-primary px-3'>
-                Sign in with Google
-              </NavLink>
+              {user ? (
+                <button type="button" className="btn btn-outline-light px-3" onClick={handleLogout}>
+                  Log Out
+                </button>
+              ) : (
+                <NavLink to='/signin' className='btn btn-primary px-3'>
+                  Sign in with Google
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>
@@ -99,14 +124,14 @@ function HomePage() {
 function Footer() {
 
 return (
-<footer className="footer bg-dark shadow-sm sticky-top">
+<footer className="footer bg-dark shadow-sm">
   <div className="container-fluid">
     <h1>
       Site Links
     </h1>
 
     <div>
-      <ul className='navbar-nav footer-foot ms-auto gap-lg-2'>
+      <ul className='navbar-nav footer-foot gap-lg-2'>
         <li className='nav-items'>
           <NavLink to='/about' className='nav-link'>About Us</NavLink>
         </li>

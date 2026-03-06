@@ -1,3 +1,18 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: linear-gradient(90deg, #cfdbff, #cfdbff, #afbfff); /* Gradient background */
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 
 body {
@@ -21,7 +36,8 @@ html {
   top: 0; /* Aligns it to the top of the screen */
   left: 0; /* Ensures it starts from the left edge */
   z-index: 1000; /* Keeps it above other elements */
-  height: 60px; /* Set a fixed height for the navbar */
+  min-height: 60px;
+  height: auto;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
 
@@ -60,11 +76,416 @@ html {
 }
 
 .footer {
-  height: 300px;  
-  padding: 15px;
+  height: 200px;  
+  padding: 10px;
   margin-top: 100px;
   color: white;
   width: 100%;
   background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4); /* Same backgroud color as navbar */
-  text-indent: 5%;
+  text-align: center;
+}
+
+.footer .container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .foot-link { 
+  font-size: 1rem; 
+}
+
+.footer .btn { 
+  font-size: 0.95rem; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Navbar CSS */
+
+.navbar .nav-link:hover {
+    text-decoration: underline;
+  }
+
+/* Footer CSS */
+
+.footer .foot-link:hover {
+  text-decoration: underline;
+}
+
+.footer .foot-link {
+    font-size: 0.67rem; 
+  }
+
+.footer .btn {
+  font-size: 0.67rem; 
+}
+
+.footer-foot {
+  width: 100%;
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+/* Home Page CSS */
+
+.home_opener {
+  margin: 0;
+  margin-top: 0%;
+  background: linear-gradient(90deg, #afbfff, #cfdbff, #cfdbff); /* Gradient background */
+  display: flex;
+  padding: 20px;
+  width: 100vw; /* Full width */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.home_text {
+  flex: 1;
+  max-width: 50%;
+  margin-right: 10px;
+  margin-left: 5%;
+} 
+
+.home_text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-align: left;
+}
+
+.home_text h2 {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400; 
+  text-align: left;
+}
+
+.home_text .btn {
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+.home_image {
+  flex: 1; 
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.home_image img {
+  max-width: 70%; 
+  height: auto;
+  border-radius: 40px;
+}
+
+.map_feature {
+  min-height: calc(100vh - 100px); /* Adjust height to leave space for the footer */
+  width: 100vw; /* Full viewport width */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  box-sizing: border-box; /* Include padding in dimensions */
+}
+
+.map_context h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.map_context .heading_context {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 400; 
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.accordion {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.accordion-header {
+  cursor: pointer;
+  font-weight: lighter;
+}
+
+.accordion-body {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 400; 
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; 
+  margin-top: 20px;
+  gap: 10px;
+  width: 100%;
+}
+
+.notify-form {
+  margin-right: 10px;
+}
+
+.button-container button{
+  padding: 10px 20px; /* Add padding to the buttons */
+  font-size: 1rem; /* Adjust font size */
+}
+
+.button-container .btn-outline-primary {
+  padding: 10px 40px; /* Increase vertical and horizontal padding */
+  font-size: 1rem; /* Adjust font size */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
+.home-cards{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px;
+}
+
+.home-cards h1{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.home-cards .subtitle {
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.home-cards-container{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.card-content {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  border: #cfdbff solid 1px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.25);
+  cursor: pointer;
+}
+
+.card-content h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  font-size: 1.2rem;
+}
+
+.home-card-resources {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.home-card-resources img {
+  width: auto;
+  height: 120px;
+  margin-right: 40px;
+}
+
+.home-card-resources-info {
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*Your Impact Section*/
+
+.impact-layout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 90vh;
+}
+
+.your-impact-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content; 
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #cfdbff;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.your-impact-header img {
+  width: 80px; 
+  height: auto; 
+  margin-bottom: -10px;
+}
+
+.your-impact-header h1 {
+  margin: 0;
+  line-height: 1.2;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.your-impact-header h1 b {
+  color: #007bff;
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.impact-titles {
+  flex: 1; /* Take up 50% of the width */
+  max-width: 45%; /* Ensure it doesn't exceed half the screen */  
+  overflow-y: auto; /* Allow scrolling if the content overflows */
+  padding: 20px; /* Add padding for spacing */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1); /* Optional: Add a subtle divider */
+}
+
+.impact-title-card {
+  text-align: center;
+  margin: 10px 0; 
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: #333 solid 1px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  flex-direction: column;
+}
+
+.impact-title-card h2 {
+  font-size: 1.5rem;
+}
+
+.impact-title-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.25);
+  cursor: pointer;
+}
+
+.impact-title-card.active {
+  background-color: rgba(0, 120, 255, 0.25);
+  color: white;
+}
+
+.impact-details {
+  flex: 1; 
+  max-width: 50%; 
+  padding: 20px; /* Add padding for spacing */
+}
+
+.impact-details img {
+  width: auto;
+  height: 450px;
+  display: block;
+  margin: 0 auto 20px; /* Center the image and add bottom margin */
+}
+
+.impact-details p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.your-impact-container h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-top: 25px;
+}
+
+.consequence-bubble{
+  background-color: #f0f8ff;
+  color: #333;
+  border: 1px solid #007bff;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin: 10px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+
+/* responsive */
+@media (max-width: 1024px){
+  .home-cards-container{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .navbar {
+    padding: 8px 12px;
+  }
+
+  .navbar-brand {
+    font-size: 1rem;
+    max-width: calc(100% - 56px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .navbar-brand img {
+    height: 32px;
+    margin-right: 8px;
+  }
+
+  .navbar-collapse {
+    background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4);
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 640px){
+  .home-cards-container{ grid-template-columns: 1fr; }
 }

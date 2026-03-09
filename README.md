@@ -15,16 +15,26 @@ While tools like the King County CSO status page already exist, they are not alw
 
 Our Moto is **“How water works for you, how you can work for water”**. Our product is meant to provide a safe and sanitary environment for both our bodies of water and for the local families and people who consistently use recreational water around King County. It started as not many people understand how the wastewater system works / impacts them, so this webapp will help clarify this as well. The main goal of our project is to create a bridge for this gap between recreational users and our water conditions by developing a user-centered approach to communicating conditions within our wastewater system.
 
-## Key features
+## Features
 
+- Water Conditions Map
+- User Impact
+- Map Notification System
+- Personalized Mapping
 
-## Architecture Overview
+## Tools
 
+- React JSX
+- HTML
+- CSS
+- Firebase
+- Firestore Database
 
-## Functional Priorities
-P0:
+## Developer Roles
 
-## Testing Strategy
-
-
-## External Reference
+- Justin (Full-Stack Development)
+- Noah (Design / Research)
+- Willy (Front-End Development)
+- Jake (Map Integration / Back-End Development)
+- Hannah (Full-Stack Development / Database Management)
+- Hieu (Front-End Development / Research)

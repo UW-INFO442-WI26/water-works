@@ -5,25 +5,31 @@ export default function About() {
     <div className="your-impact-container">
       <div className="your-impact-header">
         <img 
-          src="https://img.icons8.com/?size=100&id=10087&format=png&color=000000" 
+          src="https://img.icons8.com/?size=100&id=dGz3uury9jro&format=png&color=000000" 
           alt="about icon" 
         />
         <h1 className="primary-header">About Water Works.</h1>
-        <h1><b>Know before you go.</b></h1>
+        <h1><b>Protect the waters you're surrounded by.</b></h1>
+      </div>
+
+      <div className="video-container">
+        <h2>Water Works Guide</h2>
+        <iframe
+          src="https://www.youtube.com/embed/CncXaUQwIdw"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
       </div>
 
       <div className="container py-5">
         <div className="row justify-content-center">
           <div className="col-lg-8">
-            
-            <p className="lead text-center mb-5">
-              Protect the waters you're surrounded by.
-            </p>
 
             <section className="mb-5">
               <h3 className="mb-3">Our Mission</h3>
               <p>
-                Water Works was created to make wastewater information more
+                Water Works was created to make wastewater / recreational water information more
                 accessible, understandable, and actionable for Seattle's
                 recreational water users. Combined Sewer Overflow (CSO) events
                 can impact water quality and public health, but existing tools
@@ -98,7 +104,7 @@ export default function About() {
             {/* Back to Home Button */}
             <div className="text-center mt-5">
               <a href="/" className="btn btn-outline-primary">
-                ← Back to Map
+                ← Back Home
               </a>
             </div>
           </div>

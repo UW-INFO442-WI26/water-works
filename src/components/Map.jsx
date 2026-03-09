@@ -43,7 +43,7 @@ export const Home = () => {
   return (
     <div className="home_opener">
       <div className="home_text">
-        <h1>Know before you go. Protect the waters that surround you.</h1>
+        <h1>How water works for you. How you can work for water.</h1>
         <h2>See and stay informed on local water safety conditions, learn the impact of wastewater treatment around your area.</h2>
         <div className="buttons d-flex gap-3 mt-4">
           <a

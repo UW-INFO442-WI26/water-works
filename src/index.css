@@ -13,6 +13,10 @@ html, body {
   padding: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
 
 body {
@@ -75,8 +79,27 @@ html {
   cursor: pointer;
 }
 
+.map_feature .button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.map_feature .button-container button {
+  font-size: 1rem;
+  padding: 6px 15px;
+}
+
+.notify-form .btn {
+  white-space: nowrap;
+  padding: 6px 16px;
+}
+
+/* Footer */
+
 .footer {
-  height: 200px;  
   padding: 10px;
   margin-top: 100px;
   color: white;
@@ -87,9 +110,44 @@ html {
 
 .footer .container-fluid {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer .navbar-brand {
+  margin-right: 100px;
+}
+
+.footer .footer-foot {
+  display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+.footer .footer-foot .nav-items {
+  margin: 0 20px;
+}
+
+.footer .footer-foot .nav-items :hover{
+  text-decoration: underline;
+}
+
+.footer p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.footer p img {
+  height: 20px;
+  width: auto;
 }
 
 .footer .foot-link { 
@@ -98,10 +156,6 @@ html {
 
 .footer .btn { 
   font-size: 0.95rem; 
-}
-
-* {
-  box-sizing: border-box;
 }
 
 /* Navbar CSS */
@@ -420,14 +474,14 @@ a {
 .impact-details {
   flex: 1; 
   max-width: 50%; 
-  padding: 20px; /* Add padding for spacing */
+  padding: 20px;
 }
 
 .impact-details img {
   width: auto;
   height: 450px;
   display: block;
-  margin: 0 auto 20px; /* Center the image and add bottom margin */
+  margin: 0 auto 20px;
 }
 
 .impact-details p {
@@ -457,6 +511,18 @@ a {
   word-wrap: break-word;
 }
 
+/* About page style */
+.video-container {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 400px;
+}
+
 
 /* responsive */
 @media (max-width: 1024px){
@@ -479,13 +545,83 @@ a {
   }
 
   .navbar-collapse {
-    background: linear-gradient(90deg, #546ccc, #6c8cdc, #849ce4);
     padding: 1rem;
     border-radius: 0 0 10px 10px;
     margin-top: 8px;
   }
+  .footer .container-fluid {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-foot {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer p {
+    justify-content: center;
+  }
+
+  .footer .navbar-brand {
+    margin-right: 0px;
+  }
 }
 
-@media (max-width: 640px){
+@media (max-width: 768px){
   .home-cards-container{ grid-template-columns: 1fr; }
+  .home_image {
+    display: none;
+  }
+
+  .home_text {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .home_opener {
+    justify-content: center;
+    padding: 20px 16px;
+  }
+
+  .your-impact-header{
+    text-align: center;
+  }
+
+  .impact-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .impact-titles {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 12px;
+    padding: 16px;
+    box-shadow: none;
+    white-space: nowrap;
+  }
+
+  .impact-title-card {
+    flex: 0 0 220px;
+    margin: 0;
+  }
+
+  .impact-details {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 16px;
+  }
+
+  .impact-details img {
+    max-width: 30%;
+    height: auto;
+  }
 }

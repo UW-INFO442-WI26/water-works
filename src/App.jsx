@@ -126,9 +126,9 @@ function Footer() {
 return (
 <footer className="footer bg-dark shadow-sm">
   <div className="container-fluid">
-    <h1>
-      Site Links
-    </h1>
+        <NavLink to="/" className="navbar-brand fw-semibold">
+          <img src="../img/water-works-logo.png" alt="water works logo" />Water Works
+        </NavLink>
 
     <div>
       <ul className='navbar-nav footer-foot gap-lg-2'>
@@ -143,6 +143,7 @@ return (
         </li>
       </ul>
     </div>
+    <p>Last Updated: March 2026. <img src="https://img.icons8.com/?size=100&id=43538&format=png&color=000000" alt="copyright logo" /> Water Works</p>
   </div>
 </footer>
   );

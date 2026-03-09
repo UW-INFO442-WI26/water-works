@@ -15,6 +15,14 @@ While tools like the King County CSO status page already exist, they are not alw
 
 Our Moto is **“How water works for you, how you can work for water”**. Our product is meant to provide a safe and sanitary environment for both our bodies of water and for the local families and people who consistently use recreational water around King County. It started as not many people understand how the wastewater system works / impacts them, so this webapp will help clarify this as well. The main goal of our project is to create a bridge for this gap between recreational users and our water conditions by developing a user-centered approach to communicating conditions within our wastewater system.
 
+## User Persona
+
+https://github.com/UW-INFO442-WI26/water-works/blob/main/mvp-requirements/user-persona.pdf
+
+## Testing Protocol
+
+https://github.com/UW-INFO442-WI26/water-works/blob/main/mvp-requirements/testing-protocol.pdf
+
 ## Features
 
 - Water Conditions Map

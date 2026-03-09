@@ -1,4 +1,4 @@
-# Water Work
+# Water Works
 ## Info 442 - Group project
 ### Justin Mai, Noah Pak, Willy Dang, Jacob Waltzer, Hannah Wee, Hieu Le
 

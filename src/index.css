@@ -568,25 +568,7 @@ a {
   .footer .navbar-brand {
     margin-right: 0px;
   }
-}
-
-@media (max-width: 768px){
-  .home-cards-container{ grid-template-columns: 1fr; }
-  .home_image {
-    display: none;
-  }
-
-  .home_text {
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .home_opener {
-    justify-content: center;
-    padding: 100px 16px;
-  }
-
+  
   .your-impact-header{
     text-align: center;
   }
@@ -623,5 +605,23 @@ a {
   .impact-details img {
     max-width: 30%;
     height: auto;
+  }
+}
+
+@media (max-width: 768px){
+  .home-cards-container{ grid-template-columns: 1fr; }
+  .home_image {
+    display: none;
+  }
+
+  .home_text {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .home_opener {
+    justify-content: center;
+    padding: 100px 16px;
   }
 }

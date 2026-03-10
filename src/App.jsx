@@ -31,7 +31,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top" aria-label='main navigation bar'>
       <div className="container-fluid">
         <NavLink to="/" className="navbar-brand fw-semibold">
           <img src="../img/water-works-logo.png" alt="water works logo" />Water Works
@@ -52,24 +52,24 @@ function Navbar() {
         <div className='collapse navbar-collapse' id='mainNav'>
           <ul className='navbar-nav ms-auto align-items-lg-center gap-lg-2'>
             <li className='nav-items'>
-              <NavLink to='/' className='nav-link'>Home</NavLink>
+              <NavLink to='/' className='nav-link' aria-label='Home button'>Home</NavLink>
             </li>
             <li className='nav-items'>
-              <NavLink to='/about' className='nav-link'>About</NavLink>
+              <NavLink to='/about' className='nav-link' aria-label='About button'>About</NavLink>
             </li>
             <li className='nav-items'>
-               <NavLink to='/map' className='nav-link'>Map</NavLink>
+               <NavLink to='/map' className='nav-link' aria-label='Map button'>Map</NavLink>
             </li>
-            <li className='nav-items'>
+            <li className='nav-items' aria-label='Your impact button'>
               <NavLink to='/module' className='nav-link'>Your Impact</NavLink>
             </li>
             <li className='nav-items ms-lg-2'>
               {user ? (
-                <button type="button" className="btn btn-outline-light px-3" onClick={handleLogout}>
+                <button type="button" className="btn btn-outline-light px-3" onClick={handleLogout} aria-label='log-out button'>
                   Log Out
                 </button>
               ) : (
-                <NavLink to='/signin' className='btn btn-primary px-3'>
+                <NavLink to='/signin' className='btn btn-primary px-3' aria-label='sign-in button'>
                   Sign in with Google
                 </NavLink>
               )}
@@ -91,25 +91,25 @@ function HomePage() {
         <h1><b>Explore</b></h1>
         <h2 className="subtitle">Click to Learn More About Each Feature</h2>
         <div className="home-cards-container">
-          <NavLink to="/about" className="card-content">
+          <NavLink to="/about" className="card-content" aria-label='home page card leading to about us section'>
             <img src="https://img.icons8.com/?size=100&id=dGz3uury9jro&format=png&color=000000" alt="info icon" />
             <h2>About Us</h2>
             <p>Learn more about the Water Works team and our mission!</p>
           </NavLink>
 
-          <NavLink to="/map" className="card-content">
+          <NavLink to="/map" className="card-content" aria-label='home page card leading to the water safety map section'>
             <img src="https://img.icons8.com/?size=100&id=Kh9y4bxkctIl&format=png&color=000000" alt="map icon" />
             <h2>Water Safety Map</h2>
             <p>Is it safe today? Check if it's safe for recreational use.</p>
           </NavLink>
 
-          <NavLink to="/module" className="card-content">
+          <NavLink to="/module" className="card-content" aria-label='home page card leading to the your impact section'>
           <img src="https://img.icons8.com/?size=100&id=6z16AKadw36a&format=png&color=000000" alt="globe hands" />
             <h2>Your Impact</h2>
             <p>Learn how you can make a positive impact on our local waters through every day habits!</p>
           </NavLink>
         </div>
-        <a href="https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/education/learn-about-water" className="home-card-resources card-content">
+        <a href="https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/education/learn-about-water" className="home-card-resources card-content" aria-label='home page card leading to king countys additional resources'>
           <img src="https://bondlink-cdn.com/2282/logo.ySo0pqrL.qrAnpn1k.png" alt="king county icon" />
           <div className='home-card-resources-info'>
               <h2>Additional Resources</h2>

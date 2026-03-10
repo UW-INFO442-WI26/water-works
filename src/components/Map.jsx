@@ -41,23 +41,24 @@ function RecenterMap({ position }) {
 
 export const Home = () => {
   return (
-    <div className="home_opener">
+    <div className="home_opener" aria-label='Water Works Landing Page'>
       <div className="home_text">
-        <h1>How water works for you. How you can work for water.</h1>
+        <h1 aria>How water works for you. How you can work for water.</h1>
         <h2>See and stay informed on local water safety conditions, learn the impact of wastewater treatment around your area.</h2>
         <div className="buttons d-flex gap-3 mt-4">
           <a
             className="btn btn-outline-primary"
             onClick={() => document.getElementById("explore").scrollIntoView({ behavior: "smooth" })}
+            aria-label='Button that scrolls down to the explore components'
           >
             Learn More <i className="bi bi-arrow-down"></i>
           </a>
-          <a className="btn btn-outline-dark" href="/module">
+          <a className="btn btn-outline-dark" href="/module" aria-label='Button leading to Your Impact Page'>
             Your Impact
           </a>
         </div>
       </div>
-      <div className="home_image">
+      <div className="home_image" aria-label='home page collage'>
         <img src="../img/water_works_cover.png" alt="cover image" />
       </div>
     </div>
@@ -99,6 +100,7 @@ export const Map = ({ compact = false }) => {
   }, []);
 
   // Fetch CSO map points
+  
   useEffect(() => {
     const fetchLocations = async () => {
       try {
@@ -160,7 +162,7 @@ export const Map = ({ compact = false }) => {
       setIsSubmitting(false);
     }
   };
-
+// Citing accordion https://getbootstrap.com/docs/5.0/components/accordion/
   return (
     <div className={compact ? "map_feature" : "map_feature container"}>
       <div className="your-impact-header your-impact-container">
@@ -170,7 +172,7 @@ export const Map = ({ compact = false }) => {
       </div>
 
       {!compact && (
-        <div className="accordion accordion-flush" id="accordionFlushExample">
+        <div className="accordion accordion-flush" id="accordionFlushExample" >
           <div className="accordion-item">
             <h2 className="accordion-header" id="flush-headingOne">
               <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
@@ -283,7 +285,7 @@ export const Map = ({ compact = false }) => {
           </button>
         </form>
 
-        <button onClick={toggleDarkMode} className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`}>
+        <button onClick={toggleDarkMode} className={`btn ${isDarkMode ? "btn-dark" : "btn-light"}`} aria-label='button to switch between light and dark mode'>
           {isDarkMode ? "☀️" : "🌙"}
         </button>
 

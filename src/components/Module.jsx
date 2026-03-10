@@ -7,7 +7,7 @@ export default function Module() {
   return (
     <div className="your-impact-container">
       <div className ="your-impact-header">
-        <img src="https://img.icons8.com/?size=100&id=6z16AKadw36a&format=png&color=000000" alt="" />
+        <img src="https://img.icons8.com/?size=100&id=6z16AKadw36a&format=png&color=000000" alt="your impact logo" />
         <h1 className="primary-header">Your Impact.</h1>
         <h1><b>How you can work for water.</b></h1>
       </div>
@@ -28,13 +28,13 @@ export default function Module() {
         <div className="impact-details">
           {selectedItem !== null ? (
             <>
-              <p className="consequence-bubble"><strong>Consequence:</strong> {data[selectedItem].consequence}</p>
+              <p className="consequence-bubble" aria-label="consequence to your actions"><strong>Consequence:</strong> {data[selectedItem].consequence}</p>
               <img
                 src={data[selectedItem].image}
                 alt={data[selectedItem].title}
                 className="impact-image"
               />
-              <p className="consequence-bubble">
+              <p className="consequence-bubble" aria-label="Alternatives to your actions">
                 <strong>Alternative:</strong> {data[selectedItem].alternative}
               </p>
             </>

@@ -264,6 +264,21 @@ export const Map = ({ compact = false }) => {
             </CircleMarker>
           )}
 
+          {userLocation && (
+            <CircleMarker
+              center={userLocation}
+              radius={100}
+              color="gold"
+              fillColor="gold"
+              fillOpacity={0.1}
+              weight={0.5}
+            >
+              <Popup>
+                <strong>🏠 {userDisplayName}'s Home</strong>
+              </Popup>
+            </CircleMarker>
+          )}
+
         </MapContainer>
       </div>
 
